@@ -1,0 +1,287 @@
+.notes-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  margin: 1rem 1rem 0.5rem;
+  color: #333;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 0.5rem;
+}
+
+.notes-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.notes-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.notes-list-listview {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+.notes-list-listview .note-list-item {
+  list-style: none;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 10px 0;
+  margin: 0;
+}
+
+.notes-list-tableview {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.notes-list-tableview th, .notes-list-tableview td {
+  border: 1px solid #e0e0e0;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.notes-list-tableview th {
+  background: #f5f5f5;
+  font-weight: bold;
+}
+
+.task-boundary {
+  width: 100%;
+  height: 2px;
+  background-color: #999;
+  margin: 1rem 0;
+  position: relative;
+  scroll-margin-top: 20px;
+}
+
+.task-boundary::after {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 30px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  text-align: center;
+  color: #666;
+  pointer-events: none;
+}
+
+.view-mode-toggle {
+  margin-bottom: 1rem;
+}
+
+.view-mode-toggle button {
+  background: #f5f5f5;
+  border: 1px solid #bdbdbd;
+  border-radius: 4px;
+  padding: 6px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 8px;
+  transition: background 0.2s;
+}
+
+.view-mode-toggle button.active, .view-mode-toggle button:hover {
+  background: #ffa100;
+  color: white;
+  border-color: #ffa100;
+}
+
+.custom-table .note-table-content {
+  font-size: 1rem;
+  color: #222;
+}
+
+.custom-table .note-table-date {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 2px;
+}
+
+.table-delete-btn {
+  background: #ff5252;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 12px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.2s;
+}
+
+.table-delete-btn:hover {
+  background: #d32f2f;
+}
+
+.notes-header-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+
+.theme-toggle-btn, .viewmode-toggle-btn {
+  background: #f5f5f5;
+  border: 1px solid #bdbdbd;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+  outline: none;
+  padding: 0;
+}
+
+.theme-toggle-btn:hover, .viewmode-toggle-btn:hover {
+  background: #ffa100;
+  color: white;
+  border-color: #ffa100;
+}
+
+.add-note-form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+
+.add-note-input {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #bdbdbd;
+  font-size: 15px;
+}
+
+.add-note-btn {
+  background: #ffa100;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 18px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.add-note-btn:hover {
+  background: #ff8800;
+}
+
+.notes-list-table .add-note-form {
+  margin-bottom: 0.5rem;
+}
+
+.notes-list-grid .add-note-form {
+  grid-column: 1 / -1;
+  margin-bottom: 1rem;
+}
+
+/* Dark mode improvements */
+body.dark {
+  background: #222 !important;
+  color: #f5f5f5 !important;
+}
+
+.notes-container.dark,
+.notes-list-grid.dark,
+.notes-list-tableview.dark,
+.custom-table.dark {
+  background: #23272f !important;
+  color: #f5f5f5 !important;
+}
+
+.notes-list-tableview.dark th,
+.notes-list-tableview.dark td {
+  background: #23272f !important;
+  color: #f5f5f5 !important;
+  border-color: #444 !important;
+}
+
+.notes-list-tableview.dark th {
+  background: #262a33 !important;
+}
+
+.add-note-form.dark .add-note-input {
+  background: #23272f;
+  color: #f5f5f5;
+  border: 1px solid #444;
+}
+
+.add-note-form.dark .add-note-btn {
+  background: #ffa100;
+  color: #222;
+}
+
+.note-table-content,
+.note-table-date {
+  color: inherit;
+}
+
+.table-delete-btn.dark {
+  background: #e57373;
+  color: #fff;
+}
+
+.table-delete-btn.dark:hover {
+  background: #b71c1c;
+}
+
+/* Force dark mode for .note, .note-list-item, etc. */
+.note.dark, .note-list-item.dark {
+  background: #23272f;
+  color: #f5f5f5;
+}
+
+/* Make sure all small, placeholder, subtitle text is readable */
+.add-note-form.dark small,
+.note-table-date.dark,
+.notes-list-tableview.dark small {
+  color: #cfcfcf !important;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .notes-list {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    gap: 0.75rem;
+    width: 100%;
+  }
+  
+  .notes-list > * {
+    width: 100%;
+    margin-bottom: 0.75rem;
+  }
+  
+  .section-title {
+    margin: 0.75rem 0.5rem 0.5rem;
+    font-size: 1.2rem;
+  }
+  
+  .task-boundary {
+    margin: 0.75rem 0;
+  }
+}

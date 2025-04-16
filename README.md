@@ -68,3 +68,37 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Deploying to Firebase Hosting
+
+### 1. Install Firebase CLI (only once)
+```sh
+npm install -g firebase-tools
+```
+
+### 2. Log in to Firebase (only once)
+```sh
+firebase login
+```
+
+### 3. Build the React project
+```sh
+npm run build
+```
+
+### 4. Deploy to Firebase Hosting
+```sh
+firebase deploy --only hosting:vdt-keep-notes
+```
+
+- If this is your first time, you may need to run `firebase init` and select the correct build folder, domain, etc.
+- After a successful deploy, access your site at:
+  - https://vdt-keep-notes.web.app
+  - Or check details in the Firebase Console: https://console.firebase.google.com/project/keep-notes-management-app/overview
+
+### 5. Notes
+- Every time you change the code, you must build again (`npm run build`) before deploying.
+- You can customize the domain, add security rules, etc. in the Firebase Console.
+
+---
+If you encounter deployment errors, check your access rights, login status, or reach out for further support!

@@ -1,0 +1,12 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /notes/{document=**} {
+      // Chỉ cho phép đọc/ghi nếu user đã đăng nhập và userId trùng với uid đăng nhập
+      allow read, write: if request.auth != null && request.auth.uid == resource.data.userId;
+      // Khi tạo mới document, resource.data chưa tồn tại, nên kiểm tra với request.resource.data
+      allow create: if request.auth != null && request.auth.uid == request.resource.data.userId;
+    }
+  }
+}

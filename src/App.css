@@ -1,38 +1,127 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #f5f5f5;
+  transition: background-color 0.3s ease;
+}
+
+.app.dark-mode {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.app.dark-mode .toggle-button {
+  background-color: #3d3d3d;
+  color: #ffffff;
+}
+
+.app.dark-mode .new-note {
+  background-color: #3a7baf;
+}
+
+.app.dark-mode .new-note textarea {
+  background-color: #3a7baf;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.app.dark-mode .note {
+  background-color: #3d3d3d;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.app.dark-mode .save-button {
+  background-color: #e1e1e1;
+  color: black;
+}
+
+.app.dark-mode .search {
+  background-color: #3d3d3d;
+}
+
+.app.dark-mode .search input {
+  background-color: #3d3d3d;
+  color: white;
+}
+
+.firebase-error {
+  max-width: 400px;
+  margin: 0 auto 2rem;
+  padding: 1.5rem;
+  background-color: #ffeded;
+  border-left: 4px solid #e63946;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.firebase-error p {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.firebase-error p:last-child {
+  margin-bottom: 0;
+}
+
+.firebase-error strong {
+  color: #e63946;
+}
+
+.app.dark-mode .firebase-error {
+  background-color: #3a2a2a;
+  border-left: 4px solid #ff6b6b;
+}
+
+.app.dark-mode .firebase-error strong {
+  color: #ff6b6b;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: #666;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  margin: 1rem 0;
+}
+
+.app.dark-mode .loading {
+  background-color: rgba(45, 45, 45, 0.8);
+  color: #ddd;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 10px;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .app.dark-mode .toggle-button,
+  .toggle-button {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
+  
+  .loading {
+    padding: 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .firebase-error {
+    max-width: 100%;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
   }
 }
